@@ -4,15 +4,19 @@ import ModeloUsuario from './modelo.js';
 
 class UsuarioDAO {
 
-    constructor(){}
+    constructor() { }
 
-    registrar(usuario){
+    registrar(usuario) {
 
         return new ModeloUsuario(usuario).save();
     }
 
-    listar(){
+    listar() {
         return ModeloUsuario.find({});
+    }
+
+    encontrarUsuario(usuario) {
+        return ModeloUsuario.findOne(usuario);
     }
 
 }

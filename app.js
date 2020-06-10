@@ -15,10 +15,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/usuario',routerUsuario);
-app.use('/nota',routerNotas);
+app.use('/usuario', routerUsuario);
+app.use('/nota', routerNotas);
 
-app.use('/',routerError);
+app.use('*', routerError);
 // app.get('/',(req,res)=>res.send('hola mundo'));
 
 app.use(manejoError.logError);
@@ -27,4 +27,4 @@ app.use(manejoError.errorGenerico);
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, _ =>console.log('listen on:',PORT));
+app.listen(PORT, _ => console.log('listen on:', PORT));
